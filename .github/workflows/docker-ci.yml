@@ -25,7 +25,7 @@ jobs:
         run: npm install -D @playwright/test
       
       - name: Set up Playwright Browsers
-        run:|
+        run:
             sudo apt-get update --fix-missing || true
             npx playwright install --with-deps chromium
 
