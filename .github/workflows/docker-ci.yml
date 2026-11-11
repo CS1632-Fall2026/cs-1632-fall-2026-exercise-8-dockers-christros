@@ -35,19 +35,6 @@ jobs:
       - name: Launch Web Service
         run: docker compose up -d
 
-      - name: Check Web Server Startup
-        run: |
-          sleep 10
-          docker compose ps
-          docker compose logs --no-color --tail=200 server
-          curl -v http://localhost:8080/
-
-      - name: Debug Docker
-        run: |
-          docker compose ps
-          docker compose logs --tail=100 server
-          docker port rentacat
-
       - name: Wait for Web Server
         timeout-minutes: 5
         run: sh wait-for-webserver.sh
