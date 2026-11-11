@@ -12,4 +12,4 @@ COPY src src
 EXPOSE 8080
 
 # define default command
-CMD ["mvn", "org.springframework.boot:spring-boot-maven-plugin:2.3.1.RELEASE:run"]
+CMD ["/bin/sh", "-c", "mvn spring-boot:run"]
