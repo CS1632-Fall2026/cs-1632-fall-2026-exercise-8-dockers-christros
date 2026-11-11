@@ -25,9 +25,7 @@ jobs:
         run: npm install -D @playwright/test
       
       - name: Set up Playwright Browsers
-        run:
-            sudo apt-get update --fix-missing || true
-            npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps chromium
 
       - name: Setup Docker buildx
         uses: docker/setup-buildx-action@v4
