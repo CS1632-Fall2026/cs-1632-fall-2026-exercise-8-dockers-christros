@@ -35,12 +35,15 @@ jobs:
       - name: Launch Web Service
         run: docker compose up -d
 
+      - name: Debug Docker
+        run: |
+          docker compose ps
+          docker compose logs --tail=100 server
+          docker port rentacat
+
       - name: Wait for Web Server
         timeout-minutes: 5
-        run: |
-          until sh wait-for-webserver.sh; do
-            sleep 1
-          done
+        run: sh wait-for-webserver.sh
 
       - name: Run Playwright Tests
         run: npx playwright test --project=chromium
