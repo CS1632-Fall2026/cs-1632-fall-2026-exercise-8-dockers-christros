@@ -145,6 +145,12 @@
           </execution>
         </executions>
       </plugin>
+      
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>2.7.18</version>
+      </plugin>
     </plugins>
   </build>
 
@@ -181,12 +187,6 @@
           </reportSet>
         </reportSets>
       </plugin>
-
-    <plugin>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-maven-plugin</artifactId>
-      <version>2.7.18</version>
-    </plugin>
     </plugins>
   </reporting>
 
