@@ -36,8 +36,11 @@ jobs:
         run: docker compose up -d
 
       - name: Wait for Web Server
-        run: sh wait-for-webserver.sh
         timeout-minutes: 5
+        run: |
+          until sh wait-for-webserver.sh; do
+            sleep 1
+          done
 
       - name: Run Playwright Tests
         run: npx playwright test --project=chromium
