@@ -35,6 +35,13 @@ jobs:
       - name: Launch Web Service
         run: docker compose up -d
 
+      - name: Check Web Server Startup
+        run: |
+          sleep 10
+          docker compose ps
+          docker compose logs --no-color --tail=200 server
+          curl -v http://localhost:8080/
+
       - name: Debug Docker
         run: |
           docker compose ps
