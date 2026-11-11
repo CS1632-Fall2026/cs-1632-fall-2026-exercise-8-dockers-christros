@@ -147,7 +147,7 @@ test('TEST-9-GREET-A-CAT', async ({ page }) => {
 test('TEST-10-GREET-A-CAT-WITH-NAME', async ({ page }) => {
 
     // Navigate to 'Greet a Cat Jennyanydots' page
-    await page.goto('https://cs1632.appspot.com/greet-a-cat/Jennyanydots');
+    await page.goto('http://localhost:8080/greet-a-cat/Jennyanydots');
 
     // Postconditions: The text Meow! from Jennyanydots is displayed
     await expect(page.getByText('Meow! from Jennyanydots.')).toBeVisible();
